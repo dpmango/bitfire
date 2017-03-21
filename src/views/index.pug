@@ -3,13 +3,17 @@ html
   include shared/head.pug
 
   body
+    .preloader
+      .preloader__wrapper
+        .preloader__animation
+        
     include shared/header.pug
     
     // HERO
     .hero#sectionTop
       video(width='100%', height='auto', autoplay='autoplay', loop='loop', preload='auto')
-        source(src='video/video.mp4')
-        source(src='video/video.webm', type='video/webm')
+        source(src='video/12717176.mp4')
+        // source(src='video/video.webm', type='video/webm')
       .container
         .row
           .col-sm-12.text-center

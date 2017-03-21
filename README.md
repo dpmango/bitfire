@@ -35,4 +35,4 @@ __Production__
 - CSS Hamburgers
 
 ### Recent push command
-git add . && git commit -m "fixed hero" && git push && git subtree push --prefix dist origin gh-pages
+git add . && git commit -m "video and preloader" && git push && git subtree push --prefix dist origin gh-pages

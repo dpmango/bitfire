@@ -75,6 +75,19 @@ $(document).ready(function(){
   })
   wow.init();
 
-
-
 });
+
+window.addEventListener('load', function() {
+    var video = document.querySelector('.hero video');
+    var preloader = document.querySelector('.preloader');
+
+    function checkLoad() {
+        if (video.readyState === 4) {
+            preloader.parentNode.removeChild(preloader);
+        } else {
+            setTimeout(checkLoad, 100);
+        }
+    }
+
+    checkLoad();
+}, false);
