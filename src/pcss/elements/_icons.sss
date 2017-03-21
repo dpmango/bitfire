@@ -3,9 +3,87 @@
   display: inline-block
   font-style: normal
   content: ' '
+  background-repeat: no-repeat
+  background-size: contain
+  vertical-align: middle
+  background-position: center
 
 // mixin
 @define-mixin myIcon $name
   background: url('../images/$(name).svg') no-repeat center
   width: 1em
   height: 1em
+
+.ico-logo
+  background-image: url('../images/Logo@2x.png')
+  size: 270px 76px
+
+
+.ico-arrow-down
+  size: 40px
+  display: inline-block
+  background-color: #bdcdd6
+  background-image: svg-load('../../images/svg/arrow-down.svg')
+  background-size: 20px 10px
+  border-radius: 50%
+  border: 2px solid $colorMuted
+  position: relative
+  &::after
+    display: block
+    content: ' '
+    size: 40px
+    position: absolute
+    border-radius: 50%
+    z-index: -1
+    top: -2px
+    left: -2px
+    animation-name: pulse
+    animation-duration: 4s
+    animation-iteration-count: infinite
+    animation-timing-function: linear
+    background: transparent
+    border: 5px solid $colorCTA
+
+
+@keyframes pulse
+  0%
+    transform: scale(0)
+    opacity: 0.0
+  25%
+    transform: scale(0)
+    opacity: 0.1
+
+  50%
+    transform: scale(.7)
+    opacity: 0.3
+
+  75%
+    transform: scale(1.6)
+    opacity: 0.5
+
+  100%
+    transform: scale(1)
+    opacity: 0.0
+
+
+// ABOUT
+
+.ico-about-1
+  background-image: svg-load('../../images/svg/ico-about-1.svg', fill=$fontColor)
+.ico-about-2
+  background-image: svg-load('../../images/svg/ico-about-2.svg', fill=$fontColor)
+.ico-about-3
+  background-image: svg-load('../../images/svg/ico-about-3.svg', fill=$fontColor)
+.ico-about-4
+  background-image: svg-load('../../images/svg/ico-about-4.svg', fill=$fontColor)
+
+.about__block
+  &:hover
+    .ico-about-1
+      background-image: svg-load('../../images/svg/ico-about-1.svg', fill=#fff)
+    .ico-about-2
+      background-image: svg-load('../../images/svg/ico-about-2.svg', fill=#fff)
+    .ico-about-3
+      background-image: svg-load('../../images/svg/ico-about-3.svg', fill=#fff)
+    .ico-about-4
+      background-image: svg-load('../../images/svg/ico-about-4.svg', fill=#fff)

@@ -13,68 +13,38 @@ $(document).ready(function(){
         return false;
 	});
 
-  // owl
-  $('#owlFirst').owlCarousel({
-    loop: true,
-    nav: true,
-    margin: 0,
-    responsive: {
-      0:{
-        items: 1,
-      },
-      600:{
-        items: 1,
-      },
-      1000:{
-        items: 1,
-      }
+  // hamburger
+  $('.hamburger').on('click', function(){
+    $(this).toggleClass('is-active');
+  });
+
+  // Sticky header
+  $(window).scroll(function(e){
+    var wScroll = $(window).scrollTop();
+
+    if( wScroll > 300 ) {
+      $('.header').addClass('header--transformed');
+    } else{
+      $('.header').removeClass('header--transformed');
+    }
+
+    if( wScroll > $('.hero').height() - 80 ) {
+      $('.header').addClass('header--sticky');
+    } else{
+      $('.header').removeClass('header--sticky');
     }
   });
 
-  // Magnific Popup
-  $('.popup-with-zoom-anim').magnificPopup({
-    type: 'inline',
-    fixedContentPos: false,
-    fixedBgPos: true,
-    overflowY: 'auto',
-    closeBtnInside: true,
-    preloader: false,
-    midClick: true,
-    removalDelay: 300,
-    mainClass: 'my-mfp-zoom-in'
-  });
+  // WOW
+  var wow = new WOW({
+    boxClass:     'wow',      // default
+    animateClass: 'animated', // default
+    offset:       0,          // default
+    mobile:       false,       // default
+    live:         false        // default
+  })
+  wow.init();
 
-  $('.popup-with-move-anim').magnificPopup({
-    type: 'inline',
-    fixedContentPos: false,
-    fixedBgPos: true,
-    overflowY: 'auto',
-    closeBtnInside: true,
-    preloader: false,
-    midClick: true,
-    removalDelay: 300,
-    mainClass: 'my-mfp-slide-bottom'
-  });
 
-  $('.popup-gallery').magnificPopup({
-		delegate: 'a',
-		type: 'image',
-		tLoading: 'Loading image #%curr%...',
-		mainClass: 'mfp-img-mobile',
-		gallery: {
-			enabled: true,
-			navigateByImgClick: true,
-			preload: [0,1]
-		},
-		image: {
-			tError: '<a href="%url%">The image #%curr%</a> could not be loaded.'
-		}
-	});
-
-  // Masked input
-  $("#date").mask("99/99/9999",{placeholder:"mm/dd/yyyy"});
-  $("input[name='phone']").mask("9 (999) 999-9999");
-  $("#tin").mask("99-9999999");
-  $("#ssn").mask("999-99-9999");
 
 });

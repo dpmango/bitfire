@@ -1,10 +1,18 @@
 // HEADER::START
-- var list = ["Uno", "Dos", "Tres", "Cuatro", "Cinco", "Seis"]
-
 header.header
-  .section
+  .container
     .row
       .col-sm-12
-        ul
-          each item in list
-            li= item
+        a(href="#")
+          i.ico.ico-logo
+            
+        button.hamburger.hamburger--squeeze(type='button').hidden-sm-up
+          span.hamburger-box
+            span.hamburger-inner
+        .header__menu.hidden-sm-down
+          a(href="#").active.hidden-md-down Home
+          a(href="#") About us
+          a(href="#") How it works
+          a(href="#") Pricing    
+          a(href="#").btn.btn-yellow Free trial 
+          a(href="#") Login

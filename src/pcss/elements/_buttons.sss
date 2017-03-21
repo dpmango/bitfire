@@ -1,17 +1,62 @@
 // buttons
 .btn
+  outline: none
+  text-transform: uppercase
+  transition: all .4s ease-in-out
+  text-align: center
   &:focus, &:active
     outline: none
 
-// generic modifiers
-.btn--rounded
-  border-radius: 50%
+  &-yellow
+    background: $colorYellow
+    font-size: 17px
+    border-radius: 30px
+    padding: 8px 35px
+    &:hover, &.active
+      background: $colorCTA
+      color: white
+      &::after
+        display: none
 
-.btn--outline
-  border: 1px solid transparent
-  &:hover
+  &-cta
+    position: relative
+    font-size: 16px
+    font-family: 'Montserrat'
+    font-weight: 600
+    background: $colorCTA
+    color: white
+    border-radius: 30px
+    padding: 13px 35px
+    transform: perspective(1px) translateZ(0)
+    &::before
+      content: ''
+      position: absolute 0 0 0 0
+      border: white solid 3px
+      border-radius: 30px
+      opacity: 0
+      transition: all .3s ease
 
-.btn--abosulte-ico
-  .ico
-    position: absolute 50% 50%
-    transform: translate(-50%, -50%)
+    &:hover
+      color: white
+      background: $fontColor
+      &::before
+        opacity: 1
+        position: absolute 3px
+
+
+  &-ghost
+    font-family: 'Montserrat'
+    font-size: 16px
+    border: 1px solid white
+    background: transparent
+    border-radius: 30px
+    padding: 13px 35px
+    &:hover
+      background: white
+      color: $fontColor
+
+@media($desktop)
+  .btn
+    &-yellow
+      padding: 7px 25px
+      font-size: 15px

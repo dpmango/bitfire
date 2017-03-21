@@ -90,21 +90,21 @@ gulp.task('postcss', function() {
         stream: true
       }));
 });
+//
+// gulp.task('sass', function() {
+//   return gulp.src('./src/sass/style.+(scss|sass)')
+//       .pipe( sourcemaps.init() )
+//       .pipe( sass({ includePaths : ['./src/sass'] }) )
+//       .pipe( postcss(processors) )
+//       .pipe( sourcemaps.write('.') )
+//       .pipe( gulp.dest('./src/css') )
+//       .pipe(browserSync.reload({
+//         stream: true
+//       }));
+// });
 
-gulp.task('sass', function() {
-  return gulp.src('./src/sass/style.+(scss|sass)')
-      .pipe( sourcemaps.init() )
-      .pipe( sass({ includePaths : ['./src/sass'] }) )
-      .pipe( postcss(processors) )
-      .pipe( sourcemaps.write('.') )
-      .pipe( gulp.dest('./src/css') )
-      .pipe(browserSync.reload({
-        stream: true
-      }));
-});
-
-gulp.task('bootstrap', function() {
-  return gulp.src('./src/sass/bootstrap.+(scss|sass)')
+gulp.task('sass-assets', function() {
+  return gulp.src('./src/sass/*.+(scss|sass)')
       .pipe( sourcemaps.init() )
       .pipe( sass({ includePaths : ['./src/sass'] }) )
       .pipe( postcss(processors) )
