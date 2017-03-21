@@ -7,22 +7,23 @@ html
     
     // HERO
     .hero#sectionTop
+      video(width='100%', height='auto', autoplay='autoplay', loop='loop', preload='auto')
+        source(src='video/video.mp4')
+        source(src='video/video.webm', type='video/webm')
       .container
         .row
           .col-sm-12.text-center
-            video(width='100%', height='auto', autoplay='autoplay', loop='loop', preload='auto')
-              source(src='video/video.mp4')
-              source(src='video/video.webm', type='video/webm')
             .hero__content.wow.fadeInUpBig(data-wow-delay=".3s")
               .hero__title Easiest way to mine bitcoin
-              .hero__subtitleRegister now and get <span>free 100gb/s</span> trial
+              .hero__subtitle Register now and get <span>free 100gb/s</span> trial
               .hero__buttons
                 a(href='#').btn.btn-cta start mining now !
                 .hero__buttons__sep or
                 a(href='#').btn.btn-ghost login
             
-            a(href='#sectionAbout').hero__down.wow.fadeInUp(data-wow-delay="2s")
-              i.ico.ico-arrow-down
+            a(href='#sectionAbout').hero__down
+              .hero__down__wrap.wow.fadeInUp(data-wow-delay="2s")
+                i.ico.ico-arrow-down
     
     // ABOUT
     .about#sectionAbout

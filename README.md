@@ -1,5 +1,8 @@
-# Gulp Starter Pack
+# BitFire
 Gulp starter package to use with PostCss or sass, pug, autoprefixer, compile bootstrap, minify assets and perform other common front-end tasks.
+
+## DEMO
+http://dpmango.github.io/bitfire/
 
 ## Getting stated
 __Development:__
@@ -30,3 +33,6 @@ __Production__
 - Magnific Popup 1.1.0
 - Masked input
 - CSS Hamburgers
+
+### Recent push command
+git add . && git commit -m "fixed hero" && git push && git subtree push --prefix dist origin gh-pages
