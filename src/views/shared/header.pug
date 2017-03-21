@@ -5,14 +5,23 @@ header.header
       .col-sm-12
         a(href="#")
           i.ico.ico-logo
-            
-        button.hamburger.hamburger--squeeze(type='button').hidden-sm-up
+        button.hamburger.hamburger--squeeze(type='button')
           span.hamburger-box
             span.hamburger-inner
-        .header__menu.hidden-sm-down
-          a(href="#").active.hidden-md-down Home
-          a(href="#") About us
-          a(href="#") How it works
-          a(href="#") Pricing    
-          a(href="#").btn.btn-yellow Free trial 
-          a(href="#") Login
+        .header__menu
+          a(href="#sectionTop").active.hidden-md-down Home
+          a(href="#sectionAbout").hidden-sm-down About us
+          a(href="#sectionHow").hidden-sm-down How it works
+          a(href="#sectionPricing").hidden-sm-down Pricing    
+          a(href="").btn.btn-yellow Free trial 
+          a(href="").hidden-mobile-down Login
+
+
+.mobile-menu
+  .mobile-menu__menu
+    a(href="#sectionTop") Home
+    a(href="#sectionAbout") About us
+    a(href="#sectionHow") How it works
+    a(href="#sectionPricing") Pricing    
+    a(href="").btn.btn-yellow Free trial 
+    a(href="") Login

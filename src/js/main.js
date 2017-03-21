@@ -1,21 +1,22 @@
 $(document).ready(function(){
 
- 	// Prevent # errors
-	$('[href="#"]').click(function (e) {
-		e.preventDefault();
-	});
+   // Prevent # errors
+  $('[href="#"]').click(function (e) {
+    e.preventDefault();
+  });
 
-	// smoth scroll
-	$('a[href^="#section"]').click(function(){
+  // smoth scroll
+  $('a[href^="#section"]').click(function(){
         var el = $(this).attr('href');
         $('body, html').animate({
             scrollTop: $(el).offset().top}, 1000);
         return false;
-	});
+  });
 
   // hamburger
   $('.hamburger').on('click', function(){
     $(this).toggleClass('is-active');
+    $('.mobile-menu').toggleClass('is-active');
   });
 
   // Sticky header
@@ -33,6 +34,35 @@ $(document).ready(function(){
     } else{
       $('.header').removeClass('header--sticky');
     }
+  });
+
+  // Set active anchor tags
+  // Cache selectors
+  var topMenu = $(".header__menu"),
+  topMenuHeight = topMenu.outerHeight()+80,
+  // All list items
+  menuItems = topMenu.find("a"),
+  // Anchors corresponding to menu items
+  scrollItems = menuItems.map(function(){
+    var item = $($(this).attr("href"));
+    if (item.length) { return item; }
+  });
+
+  // Bind to scroll
+  $(window).scroll(function(){
+    // Get container scroll position
+    var fromTop = $(this).scrollTop() + topMenuHeight;
+
+    // Get id of current scroll item
+    var cur = scrollItems.map(function(){
+     if ($(this).offset().top < fromTop)
+       return this;
+    });
+    // Get the id of the current element
+    cur = cur[cur.length-1];
+    var id = cur && cur.length ? cur[0].id : "";
+    // Set/remove active class
+    menuItems.removeClass("active").filter("[href='#"+id+"']").addClass("active");
   });
 
   // WOW

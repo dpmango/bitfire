@@ -17,7 +17,11 @@
 .ico-logo
   background-image: url('../images/Logo@2x.png')
   size: 270px 76px
-
+  @media($desktop)
+    size: 221 62px
+    background-position: left center
+  @media($mobile)
+    size: 190px 50px
 
 .ico-arrow-down
   size: 40px
@@ -28,6 +32,7 @@
   border-radius: 50%
   border: 2px solid $colorMuted
   position: relative
+  cursor: pointer
   &::after
     display: block
     content: ' '
@@ -76,7 +81,6 @@
   background-image: svg-load('../../images/svg/ico-about-3.svg', fill=$fontColor)
 .ico-about-4
   background-image: svg-load('../../images/svg/ico-about-4.svg', fill=$fontColor)
-
 .about__block
   &:hover
     .ico-about-1
@@ -87,3 +91,80 @@
       background-image: svg-load('../../images/svg/ico-about-3.svg', fill=#fff)
     .ico-about-4
       background-image: svg-load('../../images/svg/ico-about-4.svg', fill=#fff)
+
+.ico-how-bg
+  background-image: svg-load('../../images/svg/how-background.svg')
+  size: 90% 240px
+
+@media($desktop)
+  .ico-how-bg
+    size: 100% 240px
+@media($tablet)
+  .ico-how-bg
+    display: none
+
+
+.ico-how-1
+  background-image: svg-load('../../images/svg/ico-how-1.svg', fill=$fontColor)
+.ico-how-2
+  background-image: svg-load('../../images/svg/ico-how-2.svg', fill=$fontColor)
+.ico-how-3
+  background-image: svg-load('../../images/svg/ico-how-3.svg', fill=$fontColor)
+.ico-how-4
+  background-image: svg-load('../../images/svg/ico-how-4.svg', fill=$fontColor)
+
+
+// PRICING
+
+.ico-bitcoin
+  background-image: url('../images/ico-bitcoin@2x.png')
+  size: 48px
+
+.ico-ethereum
+  background-image: url('../images/ico-ethereum@2x.png')
+  size: 48px
+.ico-zcash
+  background-image: url('../images/ico-zcash@2x.png')
+  size: 48px
+
+
+// FOOTER
+.ico-visa
+  background-image: svg-load('../../images/svg/ico-visa.svg')
+  size: 62px 32px
+.ico-mastercard
+  background-image: url('../images/ico-mastercard.png')
+  size: 50px 40px
+
+.ico-ssl
+  background-image: url('../images/svg/ico-ssl.svg')
+  background-position: left center
+  size: 75px 30px
+  background-size: contain
+  > span
+    font-size: 16px
+    text-align: left
+    display: block
+    margin-left: 30px
+    line-height: 1
+    > span
+      text-align: left
+      line-height: 1
+      display: block
+      font-size: 12px
+
+.ico-fb
+  background-image: svg-load('../../images/svg/ico-fb.svg', fill=rgb(160, 176, 185))
+  size: 38px
+  margin-left: 15px
+  margin-right: 15px
+  transition: all .3s ease
+  &:hover
+    background-image: svg-load('../../images/svg/ico-fb.svg', fill=#3b5998)
+
+.ico-tw
+  background-image: svg-load('../../images/svg/ico-tw.svg', fill=rgb(160, 176, 185))
+  size: 38px
+  transition: all .3s ease
+  &:hover
+    background-image: svg-load('../../images/svg/ico-tw.svg', fill=#4099FF)

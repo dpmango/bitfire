@@ -39,6 +39,7 @@
     &:hover
       color: white
       background: $fontColor
+      box-shadow: 0 2px 6px color(black a(25%))
       &::before
         opacity: 1
         position: absolute 3px
@@ -59,4 +60,9 @@
   .btn
     &-yellow
       padding: 7px 25px
+      font-size: 15px
+@media($mobile)
+  .btn
+    &-yellow
+      padding: 7px 15px
       font-size: 15px

@@ -1,5 +1,6 @@
 // LAYOUT
 
+$mobile-s: width <= 414px
 $mobile: width <= 568px
 $mobile-from: width >= 568px
 $tablet: width <= 768px
@@ -15,6 +16,7 @@ $hd-from: width >= 1680px
 $fontColor: #2f4050
 $colorYellow: #dc9517
 $colorCTA: #ec6d1f
+// $colorCTA: #1ab394
 $colorMuted: #a0b0b9
 
 $colorGreen: #4ab68f
@@ -27,9 +29,11 @@ $colorOrange: #f46d36
 a
   color: inherit
   text-decoration: none
-  &:hover, &:focus, &:visited
+  &:hover, &:focus
     text-decoration: none
     color: inherit
+  &:visited
+    text-decoration: none
 
 ul
   list-style: none
@@ -43,6 +47,7 @@ body, html
   font-family: 'Roboto', sans-serif
   font-size: 16px
   max-width: 100%
+  min-width: 320px
   overflow-x: hidden
 
 
@@ -64,7 +69,10 @@ body, html
   @media($tablet)
     display: none !important
 
-
+.hidden-mobile-down
+  display: inline-block !important
+  @media($mobile)
+    display: none !important
 
 .hidden-sm-up
   display: inline-block !important

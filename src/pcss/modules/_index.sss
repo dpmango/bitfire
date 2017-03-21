@@ -51,13 +51,67 @@
           opacity: 1
           width: 100%
           transform: translate3d(0px, 0, 0)
+  .hamburger
+    display: none
 
 @media($desktop)
   .header
     &__menu
+      margin-top: 20px
       a
         margin-right: 15px
         font-size: 15px
+    &--transformed
+      .header__menu
+        margin-top: 15px
+
+@media($mobile)
+  .header
+    top: 20px
+    &--sticky
+      top: 0
+      .hamburger
+        margin-top: 17px
+    .hamburger
+      display: inline-block
+    &__menu
+      margin-top: 13px
+
+@media($mobile-s)
+  .header
+    .btn-yellow
+      display: none
+
+.mobile-menu
+  position: fixed
+  top: 80px
+  left: 0
+  right: 0
+  z-index: 10
+  background: white
+  pointer-events: none
+  opacity: 0
+  transform: translate3d(0, 100%, 0)
+  transition: all .4s ease-out
+  box-shadow: 0 3px 7px color(black a(25%))
+  @media($mobile-from)
+    display: none !important
+  &.is-active
+    pointer-events: all
+    opacity: 1
+    transform: translate3d(0, 0, 0)
+
+  &__menu
+    text-align: center
+    padding: 20px 30px
+    a
+      display: block
+      padding-top: 6px
+      padding-bottom: 6px
+      &.btn
+        display: inline-block
+        color: white
+
 
 // HERO
 .hero
@@ -122,6 +176,43 @@
     left: 50%
     transform: translateX(-50%)
 
+@media($desktop)
+  .hero
+    &__title
+      font-size: 45px
+    &__subtitle
+      font-size: 24px
+
+@media(height <= 600px)
+  .hero
+    &__title
+      margin-top: 200px
+
+@media($tablet)
+  .hero
+    &__title
+      margin-top: 200px
+      font-size: 42px
+    &__subtitle
+      font-size: 20px
+    &__buttons
+      .btn
+        min-width: 200px
+
+
+@media($mobile)
+  .hero
+    &__title
+      font-size: 36px
+      margin-top: 150px
+    &__subtitle
+      font-size: 17px
+    &__buttons
+      &__sep
+        display: none
+      .btn
+        margin-bottom: 15px
+
 // ABOUT SECTION
 .about
   padding-top: 100px
@@ -164,6 +255,34 @@
     margin-top: 70px
     margin-left: -80px
 
+@media($desktop)
+  .about
+    &__block
+      &__icon
+        margin-right: 20px
+      &__name
+        font-size: 20px
+        margin-bottom: 10px
+
+    &__image
+      margin-left: 0px
+      text-align: center
+      img
+        max-width: 100%
+
+@media($tablet)
+  .about
+    padding-top: 80px
+    &__block
+      margin-top: 40px
+
+@media($mobile-s)
+  .about
+    &__image
+      img
+        max-width: 120%
+        margin-left: -10%
+
 
 
 .section-title
@@ -185,6 +304,14 @@
     &::after
       background: linear-gradient( to right, rgba(255,255,255,0), rgba(255,255,255,1) )
 
+@media($tablet)
+  .section-title
+    font-size: 26px
+
+@media($mobile)
+  .section-title
+    font-size: 23px
+
 .separate
   text-align: center
   margin-top: -40px
@@ -204,10 +331,14 @@
     left: 0
     transform: translateY(-50%)
 
+@media($desktop)
+  .separate
+    margin-top: -10px
+
 
 // HOW IT WORKS SECTIOn
 .how
-  margin-top: 90px
+  padding-top: 90px
   &__name
     font-size: 22px
     font-family: 'Montserrat'
@@ -218,12 +349,84 @@
     font-size: 14px
     color: color($fontColor a(80%))
     line-height: 20px
-  &:hover
-    .how__name
-      color: $colorCTA
-    .how__icon
-      background: $colorCTA
-      border-color: white
+  &__icon
+    display: inline-block
+    size: 95px
+    border: 2px dashed $colorMuted
+    border-radius: 50%
+    position: relative
+    margin-top: 60px
+    margin-bottom: 70px
+    transition: all .3s ease
+    .ico
+      size: 50px
+      position: absolute
+      top: 50%
+      left: 50%
+      transform: translate(-50%, -50%)
+    // &::after
+    //   display: block
+    //   content: ' '
+    //   position: absolute
+    //   overflow: visible
+    //
+    // &--first
+    //   margin-top: 90px
+    //   &::after
+    //     top: -85px
+    //     left: 40px
+    //     background: svg-load('../../images/svg/ico-howline-1.svg') no-repeat top center
+    //     background-size: contain
+    //     size: 350px 80px
+    //
+    // &--second
+    //
+    //   &::after
+    //     top: 85px
+    //     left: 40px
+    //     background: svg-load('../../images/svg/ico-howline-2.svg') no-repeat center
+    //     background-size: contain
+    //     size: 350px 80px
+    // &--third
+    //   margin-top: 90px
+    //   margin-left: 20px
+    //   &::after
+    //     top: -85px
+    //     left: 40px
+    //     background: svg-load('../../images/svg/ico-howline-3.svg') no-repeat center
+    //     background-size: contain
+    //     size: 350px 80px
+    // &--fourth
+    //   margin-left: 40px
+
+  &__block
+    margin-top: 20px
+    &:hover
+      .how__name
+        color: $colorCTA
+      .how__icon
+        background: $colorCTA
+        border-color: white
+
+
+@media($desktop)
+  .how
+    &__name
+      font-size: 20px
+      margin-bottom: 10px
+
+@media($tablet)
+  padding-top: 80px
+  .how
+    padding-top: 60px
+    &__block
+      display: flex
+      margin-top: 40px
+    &__icon
+      flex: 0 0 80px
+      size: 80px
+      margin: 0
+      margin-right: 20px
 
 // CTA Section
 .cta
@@ -250,6 +453,200 @@
     margin-top: 20px
     margin-bottom: 50px
 
+@media($desktop)
+  .cta
+    &__description
+      font-size: 19px
+
+@media($tablet)
+  .cta
+    margin-top: 60px
+    padding-top: 50px
+    &__description
+      font-size: 16px
+      margin-bottom: 30px
+
+
 // PRICING
 .pricing
-  margin-top: 75px
+  padding-top: 75px
+  padding-bottom: 100px
+
+  &__block
+    border: 3px solid transparent
+    text-align: center
+    margin-top: 60px
+    transition: transform .4s ease-out
+    &__name
+      font-family: 'Montserrat'
+      font-weight: 700
+      font-size: 24px
+      margin-top: 15px
+    &__icon
+      margin: 25px 0
+    &__price
+      color: white
+      span
+        font-family: 'Montserrat'
+        font-weight: 600
+        font-size: 40px
+    &__description
+      color: #636363
+      padding-top: 15px
+      transition: all .3s ease-in-out
+      > span
+        display: block
+        padding: 8px
+        > span
+          font-weight: 700
+    &__button
+      padding-top: 20px
+      padding-bottom: 30px
+      padding-left: 35px
+      padding-right: 35px
+      transition: all .3s ease-in-out
+      .btn
+        display: block
+        width: 100%
+        font-family: 'Montserrat'
+        font-weight: 600
+        border-radius: 0
+        border: 3px solid transparent
+        &:hover
+          background: white
+    &--bitcoin
+      border-color: #f7931b
+      .pricing__block__price
+        background-color: #f7931b
+      .pricing__block__button
+        .btn
+          border-color: #f7931b
+          &:hover
+            color: #f7931b !important
+
+    &--ethereum
+      border-color: #afaabf
+      .pricing__block__price
+        background-color: #afaabf
+      .pricing__block__button
+        .btn
+          border-color: #afaabf
+          &:hover
+            color: #afaabf !important
+    &--zcash
+      border-color: #026ab8
+      .pricing__block__price
+        background-color: #026ab8
+      .pricing__block__button
+        .btn
+          border-color: #026ab8
+          &:hover
+            color: #026ab8 !important
+
+    &:hover
+      transform: translate3d(0, -25px, 0)
+      .pricing__block__description
+        color: white
+      .pricing__block__button
+        .btn
+          border-color: white
+          color: white
+      &.pricing__block--bitcoin
+        .pricing__block__description
+          background: #f7931b
+        .pricing__block__button
+          background: #f7931b
+      &.pricing__block--ethereum
+        .pricing__block__description
+          background: #afaabf
+        .pricing__block__button
+          background: #afaabf
+      &.pricing__block--zcash
+        .pricing__block__description
+          background: #026ab8
+        .pricing__block__button
+          background: #026ab8
+
+@media($tablet)
+  .pricing
+    padding-top: 55px
+    padding-bottom: 70px
+    &__block
+      margin-top: 30px
+      max-width: 500px
+      margin-left: auto
+      margin-right: auto
+      &:hover
+        transform: translate3d(0, 0px, 0)
+
+// FOOTER
+.footer
+  background: $fontColor
+  color: #bdcdd6
+  padding-top: 45px
+  padding-bottom: 25px
+  &__desc
+    margin-bottom: 35px
+  &__copy
+    margin-top: 35px
+    font-size: 14px
+    a
+      display: inline-block
+      color: $colorCTA
+  &__nav
+    display: inline-block
+    &:last-child
+      float: right
+    &__title
+      color: white
+      font-family: 'Montserrat'
+      font-size: 18px
+    a
+      display: block
+      padding: 5px 0
+      font-size: 15px
+      transition: all .3s ease
+      &:hover
+        color: white
+  &__logos
+    text-align: right
+    .ico
+      display: inline-block
+    .ico-visa
+      margin-right: 10px
+    .ico-ssl
+      margin-top: 30px
+
+  &__socials
+    margin-top: 25px
+    float: right
+    font-family: 'Montserrat'
+    font-size: 14px
+
+@media($tablet)
+  .footer
+    text-align: center
+    padding-top: 35px
+    &__desc
+      font-size: 14px
+      margin-top: 25px
+      margin-bottom: 10px
+    &__copy
+      font-size: 12px
+    &__logos
+      text-align: center
+      margin-top: 20px
+      .ico
+        display: inline-block
+        transform: scale(.8)
+      .ico-visa
+        margin-right: 15px
+      .ico-ssl
+        margin-top: 0px
+        margin-left: 15px
+    &__nav
+      display: none
+    &__socials
+      text-align: center
+      float: none
+      font-size: 0
