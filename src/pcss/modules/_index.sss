@@ -191,6 +191,10 @@
 
 @media($tablet)
   .hero
+    background: url('../video/video.jpg') no-repeat center
+    background-size: cover
+    video
+      display: none
     &__title
       margin-top: 200px
       font-size: 42px
@@ -659,6 +663,8 @@
   position: fixed 0 0 0 0
   z-index: 99
   transition: all .3s ease-in-out
+  @media($tablet)
+    display: none
   &.reveal
     transform: translate3d(0, -100%, 0)
   &__wrapper

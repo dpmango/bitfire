@@ -779,7 +779,13 @@ body, html {
     }
 }
 @media(max-width: 768px) {
-    .hero {}
+    .hero {
+        background: url('../video/video.jpg') no-repeat center;
+        background-size: cover;
+    }
+    .hero video {
+        display: none;
+    }
     .hero__title {
         margin-top: 200px;
         font-size: 42px;
@@ -1346,6 +1352,11 @@ body, html {
     background: #2f4050;
     -webkit-transition: all .3s ease-in-out;
     transition: all .3s ease-in-out;
+}
+@media(max-width: 768px) {
+    .preloader {
+        display: none;
+    }
 }
 .preloader.reveal {
     -webkit-transform: translate3d(0, -100%, 0);

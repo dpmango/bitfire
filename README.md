@@ -35,4 +35,4 @@ __Production__
 - CSS Hamburgers
 
 ### Recent push command
-gulp build && git add . && git commit -m "reveal preloader" && git push && git subtree push --prefix dist origin gh-pages
+gulp build && git add . && git commit -m "mobile fixes" && git push && git subtree push --prefix dist origin gh-pages
