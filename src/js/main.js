@@ -79,11 +79,13 @@ $(document).ready(function(){
 
 window.addEventListener('load', function() {
     var video = document.querySelector('.hero video');
-    var preloader = document.querySelector('.preloader');
 
     function checkLoad() {
         if (video.readyState === 4) {
-            preloader.parentNode.removeChild(preloader);
+            setTimeout(function(){
+              $('.preloader').addClass('reveal');
+            }, 300);
+
         } else {
             setTimeout(checkLoad, 100);
         }
