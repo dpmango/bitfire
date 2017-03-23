@@ -35,4 +35,4 @@ __Production__
 - CSS Hamburgers
 
 ### Recent push command
-gulp build && git add . && git commit -m "video options" && git push && git subtree push --prefix dist origin gh-pages
+gulp build && git add . && git commit -m "bg overlay" && git push && git subtree push --prefix dist origin gh-pages
