@@ -3753,7 +3753,7 @@ body, html {
     z-index: 1;
     display: block;
     background: #000000;
-    background: rgba(0, 0, 0, 0.4);
+    background: rgba(0, 0, 0, 0.3);
     content: ' ';
 }
 .hero__content {
@@ -3797,6 +3797,7 @@ body, html {
     position: absolute;
     bottom: 30px;
     left: 50%;
+    z-index: 5;
     -webkit-transform: translateX(-50%);
         -ms-transform: translateX(-50%);
             transform: translateX(-50%);
