@@ -35,4 +35,4 @@ __Production__
 - CSS Hamburgers
 
 ### Recent push command
-gulp build && git add . && git commit -m "another video" && git push && git subtree push --prefix dist origin gh-pages
+gulp build && git add . && git commit -m "hover animation fix" && git push && git subtree push --prefix dist origin gh-pages

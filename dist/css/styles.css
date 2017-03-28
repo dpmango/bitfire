@@ -4239,33 +4239,35 @@ body, html {
 .pricing__block--zcash .pricing__block__button .btn:hover {
     color: #026ab8 !important;
 }
-.pricing__block:hover {
-    -webkit-transform: translate3d(0, -25px, 0);
-            transform: translate3d(0, -25px, 0);
+.pricing__block:hover:not(.animated) {
+    -webkit-transform: translate3d(0, -25px, 0) !important;
+            transform: translate3d(0, -25px, 0) !important;
+    -webkit-animation-name: none !important;
+            animation-name: none !important;
 }
-.pricing__block:hover .pricing__block__description {
+.pricing__block:hover:not(.animated) .pricing__block__description {
     color: white;
 }
-.pricing__block:hover .pricing__block__button .btn {
+.pricing__block:hover:not(.animated) .pricing__block__button .btn {
     border-color: white;
     color: white;
 }
-.pricing__block:hover.pricing__block--bitcoin .pricing__block__description {
+.pricing__block:hover:not(.animated).pricing__block--bitcoin .pricing__block__description {
     background: #f7931b;
 }
-.pricing__block:hover.pricing__block--bitcoin .pricing__block__button {
+.pricing__block:hover:not(.animated).pricing__block--bitcoin .pricing__block__button {
     background: #f7931b;
 }
-.pricing__block:hover.pricing__block--ethereum .pricing__block__description {
+.pricing__block:hover:not(.animated).pricing__block--ethereum .pricing__block__description {
     background: #afaabf;
 }
-.pricing__block:hover.pricing__block--ethereum .pricing__block__button {
+.pricing__block:hover:not(.animated).pricing__block--ethereum .pricing__block__button {
     background: #afaabf;
 }
-.pricing__block:hover.pricing__block--zcash .pricing__block__description {
+.pricing__block:hover:not(.animated).pricing__block--zcash .pricing__block__description {
     background: #026ab8;
 }
-.pricing__block:hover.pricing__block--zcash .pricing__block__button {
+.pricing__block:hover:not(.animated).pricing__block--zcash .pricing__block__button {
     background: #026ab8;
 }
 @media(max-width: 768px) {

@@ -549,8 +549,9 @@
           &:hover
             color: #026ab8 !important
 
-    &:hover
-      transform: translate3d(0, -25px, 0)
+    &:hover:not(.animated)
+      transform: translate3d(0, -25px, 0) !important
+      animation-name: none !important
       .pricing__block__description
         color: white
       .pricing__block__button
