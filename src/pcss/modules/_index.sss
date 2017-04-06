@@ -24,6 +24,12 @@
     opacity: 1
     transform: translate3d(0,0,0)
 
+  &--static
+    background: $fontColor
+    position: static
+    padding-top: 10px
+    padding-bottom: 20px
+
   &__menu
     float: right
     display: inline-block
@@ -325,6 +331,8 @@
   .btn
     position: relative
     z-index: 2
+  &--bottom
+    margin-bottom: 80px
 
   &::after
     display: block
@@ -761,3 +769,9 @@
     transform: scale(1.5)
   100%
     transform: scale(0)
+
+
+// TEXT
+.text
+  margin-top: 80px
+  padding-bottom: 70px
