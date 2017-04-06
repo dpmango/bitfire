@@ -23,17 +23,22 @@ $(document).ready(function(){
   $(window).scroll(function(e){
     var wScroll = $(window).scrollTop();
 
-    if( wScroll > 300 ) {
-      $('.header').addClass('header--transformed');
-    } else{
-      $('.header').removeClass('header--transformed');
-    }
+    if ($('.header').is('.header--static')){
 
-    if( wScroll > $('.hero').height() - 80 ) {
-      $('.header').addClass('header--sticky');
     } else{
-      $('.header').removeClass('header--sticky');
+      if( wScroll > 300 ) {
+        $('.header').addClass('header--transformed');
+      } else{
+        $('.header').removeClass('header--transformed');
+      }
+
+      if( wScroll > $('.hero').height() - 80 ) {
+        $('.header').addClass('header--sticky');
+      } else{
+        $('.header').removeClass('header--sticky');
+      }
     }
+    
   });
 
   // Set active anchor tags
