@@ -3605,6 +3605,12 @@ body, html {
     -webkit-transform: translate3d(0,0,0);
             transform: translate3d(0,0,0);
 }
+.header--static {
+    position: static;
+    padding-top: 10px;
+    padding-bottom: 20px;
+    background: #2f4050;
+}
 .header__menu {
     display: inline-block;
     float: right;
@@ -3992,6 +3998,9 @@ body, html {
 .separate .btn {
     position: relative;
     z-index: 2;
+}
+.separate--bottom {
+    margin-bottom: 80px;
 }
 .separate:after {
     position: absolute;
@@ -4675,4 +4684,9 @@ body, html {
         -webkit-transform: scale(0);
                 transform: scale(0);
     }
+}
+/* TEXT */
+.text {
+    margin-top: 80px;
+    padding-bottom: 70px;
 }
