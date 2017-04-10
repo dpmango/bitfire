@@ -38,7 +38,7 @@ $(document).ready(function(){
         $('.header').removeClass('header--sticky');
       }
     }
-    
+
   });
 
   // Set active anchor tags
@@ -46,12 +46,14 @@ $(document).ready(function(){
   var topMenu = $(".header__menu"),
   topMenuHeight = topMenu.outerHeight()+80,
   // All list items
-  menuItems = topMenu.find("a"),
+  menuItems = topMenu.find("a.hidden-md-down, a.hidden-sm-down"),
   // Anchors corresponding to menu items
   scrollItems = menuItems.map(function(){
     var item = $($(this).attr("href"));
-    if (item.length) { return item; }
+    if ( item.length ) { return item; }
   });
+
+  console.log(scrollItems);
 
   // Bind to scroll
   $(window).scroll(function(){
